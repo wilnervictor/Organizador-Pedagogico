@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #1A73B8;
+  --color-brand-yellow: #FFC131;
+  --color-brand-bg: #E1F5FE;
+
+  --font-mont: "Montserrat", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+body, #root{
+  background-color: var(--color-brand-bg);
+  
+}
