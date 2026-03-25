@@ -18,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/percentua",
     element: <PageFaltas/>
+  },
+  {
+    path: "*",
+    element: <div>Essa página não existe (ou erro 404)...</div>
   }
 ])
 

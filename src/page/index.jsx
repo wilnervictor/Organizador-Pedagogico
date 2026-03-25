@@ -37,26 +37,74 @@ const PagesAulas = () => {
         h1 { color: #000; text-align: center; font-size: 2rem; }
         p { font-size: 18px; line-height: 1.6; }
         .container { display: flex; justify-content: space-between; margin-bottom: 20px; }
-        span { color: rgb(250, 109, 109); }
+        span { color: #000; }
         b { color: rgb(250, 109, 109); }
+        .vao {
+         color: #000;
+        }
+         .nao {
+          color: #0000cc;
+         }
+
+          .vaoS {
+         /* Cores principais */
+    background-color: #000000 !important; 
+    color: #ffffff !important;
+    
+    /* Layout da caixinha */
+    padding: 5px 15px;
+    display: inline-block; /* Garante que a caixa envolva o texto certinho */
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    
+    /* Forçar a cor na impressão */
+    -webkit-print-color-adjust: exact; 
+    print-color-adjust: exact;
+}
+    .naoS {
+    /* Cor de fundo e texto para destaque */
+    background-color: #0047ab !important; /* Vermelho bem claro para destaque */
+    color: #ffffff !important;           /* Texto vermelho escuro para contraste */
+    
+    /* Layout idêntico para alinhar com o "Vão" */
+    padding: 5px 15px;
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; /* Se for um link, remove o sublinhado */
+    
+    /* Forçar a cor na impressão (fundamental!) */
+    -webkit-print-color-adjust: exact; 
+    print-color-adjust: exact;
+}
       </style>
     </head>
     <body>
       <h1>Roteiro de Aula</h1>
       <div class="container">
-        <p><b>Série:</b> ${anoSerie}</p>
-        <p><mark><b>Data:</b> <span>${data}</span></mark></p>
-        <p><b>Nº Aula:</b> ${numeroDaAula}</p>
+        <p class="nao"><b>Série:</b> ${anoSerie}</p>
+        <p class="vao"><b>Data:</b> <span>${data}</span></p>
+        <p class="vao"><b>Nº Aula:</b> ${numeroDaAula}</p>
       </div>
-      <p><b>Área Conhecimento:</b> ${areaDeConhecimento}</p>
-      <p><b>Acolhida:</b> ${acolhida}</p>
-      <p><b>Leitura deleite:</b> ${leitura}</p>
-      <p><b>Chamada diária:</b> Sim</p>
-      <p><b>Correção do para casa:</b> Sim</p>
-      <p><b>Prática de linguagem ou unidade temática:</b> ${unidadeTematica}</p>
-      <p><b>Objeto de conhecimento:</b> ${objeto}</p>
-      <p><b>Código da habilidade:</b> ${habilidade}</p>
-      <p><b>Atividades desenvolvidas:</b> ${desenvolvida}</p>
+      <p class="vao"><b>Área Conhecimento:</b> ${areaDeConhecimento}</p>
+      <p class="nao"><b>Acolhida:</b> ${acolhida}</p>
+      <p class="nao"><b>Leitura deleite:</b> ${leitura}</p>
+      <p class="nao"><b>Chamada diária:</b> Sim</p>
+      <p class="nao"><b>Correção do para casa:</b> Sim</p>
+      <p class="vao"><b>Prática de linguagem ou unidade temática:</b> ${unidadeTematica}</p>
+      <p class="vao"><b>Objeto de conhecimento:</b> ${objeto}</p>
+      <p class="vao"><b>Código da habilidade:</b> ${habilidade}</p>
+      <p class="vao"><b>Atividades desenvolvidas:</b> ${desenvolvida}</p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <p class="vaoS">Vão para a caderneta</p>
+      <p class="naoS">Não vão para a caderneta</p>
     </body>
     </html>
   `
