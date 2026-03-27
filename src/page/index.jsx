@@ -1,31 +1,38 @@
-
-import { useState } from "react"
-import Botao from "../Componetes/Botao"
-import Label from "../Componetes/Label"
-import Titulo from "../Componetes/Titulo"
-import Paragrafo from "../Componetes/Paragrafo"
-import Hr from "../Componetes/Hr"
+import { useState } from "react";
+import Botao from "../Componetes/Botao";
+import Label from "../Componetes/Label";
+import Titulo from "../Componetes/Titulo";
+import Paragrafo from "../Componetes/Paragrafo";
+import Hr from "../Componetes/Hr";
 
 const PagesAulas = () => {
-
-  const [data, setData]= useState('')
-  const [anoSerie, setAnoSerie]= useState('')
-  const [numeroDaAula, setNumeroDaAula]= useState('')
-  const [areaDeConhecimento, setAreaDeConhecimento]= useState('')
-  const [acolhida, setAcolhida]= useState('')
-  const [leitura, setLeitura]= useState('')
-  const [unidadeTematica, setUnidadeTematica]= useState('')
-  const [objeto, setObjeto]= useState('')
-  const [habilidade, setHabilidade]= useState('')
-  const [desenvolvida, setDesenvolvida]= useState('')
-  
+  const [data, setData] = useState("");
+  const [anoSerie, setAnoSerie] = useState("");
+  const [numeroDaAula, setNumeroDaAula] = useState("");
+  const [areaDeConhecimento, setAreaDeConhecimento] = useState("");
+  const [acolhida, setAcolhida] = useState("");
+  const [leitura, setLeitura] = useState("");
+  const [unidadeTematica, setUnidadeTematica] = useState("");
+  const [objeto, setObjeto] = useState("");
+  const [habilidade, setHabilidade] = useState("");
+  const [desenvolvida, setDesenvolvida] = useState("");
 
   function gerarPaginar() {
-
-   if(data == '' || anoSerie == '' || numeroDaAula == '' || areaDeConhecimento == '' || acolhida == '' || leitura == '' || unidadeTematica == '' || objeto == '' || habilidade == '' || desenvolvida == ''){
-     return
-   } 
-   const novaPagina = `
+    if (
+      data == "" ||
+      anoSerie == "" ||
+      numeroDaAula == "" ||
+      areaDeConhecimento == "" ||
+      acolhida == "" ||
+      leitura == "" ||
+      unidadeTematica == "" ||
+      objeto == "" ||
+      habilidade == "" ||
+      desenvolvida == ""
+    ) {
+      return;
+    }
+    const novaPagina = `
     <!DOCTYPE html>
     <html lang="pt-BR">
     <head>
@@ -107,44 +114,113 @@ const PagesAulas = () => {
       <p class="naoS">Não vão para a caderneta</p>
     </body>
     </html>
-  `
+  `;
 
-const blob = new Blob([novaPagina], { type: 'text/html' })
-const url = URL.createObjectURL(blob)
-const janela = window.open(url, '_blank')
+    const blob = new Blob([novaPagina], { type: "text/html" });
+    const url = URL.createObjectURL(blob);
+    const janela = window.open(url, "_blank");
 
-if (!janela) {
-  alert('Permita popups para gerar o roteiro!')
-  return
-}
+    if (!janela) {
+      alert("Permita popups para gerar o roteiro!");
+      return;
+    }
 
-janela.onload = () => {
-  janela.print()
-  URL.revokeObjectURL(url)
-}
+    janela.onload = () => {
+      janela.print();
+      URL.revokeObjectURL(url);
+    };
   }
 
-    return (
-      <>
-      <form onSubmit={e => {e.preventDefault()}} className="w-full p-5 bg-white sm:w-150 m-auto sm:mt-10 sm:rounded-2xl flex flex-col gap-3 mb-9">
-      <Titulo valor="Roteiro de Aula"/>
-      <Paragrafo valor="Planejamento Pedagógico"/>
-      <Hr/>
-      <Label valor="Data:" type="date" aoValor={v => setData(v)}/>
-      <Label valor="Ano/Serie:" type="text" aoValor={v => setAnoSerie(v)}/>
-      <Label valor="Numero/Da Aula:" type="Number" aoValor={v => setNumeroDaAula(v)}/>
-      <Label valor="Área Conhecimento:" type="text" aoValor={v => setAreaDeConhecimento(v)}/>
-      <Label valor="Acolhida:" type="text" aoValor={v => setAcolhida(v)}/>
-      <Label valor="Leitura deleite:" type="text" aoValor={v => setLeitura(v)}/>
-      <Label valor="Prática de linguagem ou unidade temática:" type="text" aoValor={v => setUnidadeTematica(v)}/>
-      <Label valor="Objeto de conhecimento:" type="text" aoValor={v => setObjeto(v)}/>
-      <Label valor="Código da habilidade:" type="text" aoValor={v => setHabilidade(v)}/>
-      <Label valor="Atividades desenvolvidas:" type="text" aoValor={v => setDesenvolvida(v)}/>
-      <Botao valor="Gerar Pagina" onClick={gerarPaginar}/>
+  function limpar() {
+    setData("");
+    setNumeroDaAula("");
+    setAreaDeConhecimento("");
+    setAcolhida("");
+    setLeitura("");
+    setUnidadeTematica("");
+    setObjeto("");
+    setHabilidade("");
+    setDesenvolvida("");
+  }
+
+  return (
+    <>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+        className="w-full p-5 bg-white sm:w-150 m-auto sm:mt-10 sm:rounded-2xl flex flex-col gap-3 mb-9"
+      >
+        <Titulo valor="Roteiro de Aula" />
+        <Paragrafo valor="Planejamento Pedagógico" />
+        <Hr />
+        <Label
+          valor="Data:"
+          type="date"
+          value={data}
+          aoValor={(v) => setData(v)}
+        />
+        <Label
+          valor="Ano/Serie:"
+          type="text"
+          value={anoSerie}
+          aoValor={(v) => setAnoSerie(v)}
+        />
+        <Label
+          valor="Numero/Da Aula:"
+          type="Number"
+          value={numeroDaAula}
+          aoValor={(v) => setNumeroDaAula(v)}
+        />
+        <Label
+          valor="Área Conhecimento:"
+          type="text"
+          value={areaDeConhecimento}
+          aoValor={(v) => setAreaDeConhecimento(v)}
+        />
+        <Label
+          valor="Acolhida:"
+          type="text"
+          value={acolhida}
+          aoValor={(v) => setAcolhida(v)}
+        />
+        <Label
+          valor="Leitura deleite:"
+          type="text"
+          value={leitura}
+          aoValor={(v) => setLeitura(v)}
+        />
+        <Label
+          valor="Prática de linguagem ou unidade temática:"
+          type="text"
+          value={unidadeTematica}
+          aoValor={(v) => setUnidadeTematica(v)}
+        />
+        <Label
+          valor="Objeto de conhecimento:"
+          type="text"
+          value={objeto}
+          aoValor={(v) => setObjeto(v)}
+        />
+        <Label
+          valor="Código da habilidade:"
+          type="text"
+          value={habilidade}
+          aoValor={(v) => setHabilidade(v)}
+        />
+        <Label
+          valor="Atividades desenvolvidas:"
+          type="text"
+          value={desenvolvida}
+          aoValor={(v) => setDesenvolvida(v)}
+        />
+         <div className="flex justify-between">
+        <Botao valor="Gerar Pagina" onClick={gerarPaginar} />
+        <Botao valor="Limpar" onClick={limpar} />
+         </div>
       </form>
+    </>
+  );
+};
 
-      </>
-    )
-}
-
-export default PagesAulas
+export default PagesAulas;
