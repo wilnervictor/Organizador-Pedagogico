@@ -8,7 +8,7 @@ function App() {
       <Card 
       planejamento="Planejamento de Aula" 
       percentual="Percentual de faltas"
-      valor="Sistema de ajudar a monitores"
+      valor="Sistema de ajuda aos monitores"
       toLink="/planejamento"
       to="/percentua"
       />

@@ -92,7 +92,7 @@ const PagesAulas = () => {
       <p class="nao"><b>Acolhida:</b> ${acolhida}</p>
       <p class="nao"><b>Leitura deleite:</b> ${leitura}</p>
       <p class="nao"><b>Chamada diária:</b> Sim</p>
-      <p class="nao"><b>Correção do para casa:</b> Sim</p>
+      <p class="nao"><b>Orientação e Auxílio no Para Casa:</b> Sim</p>
       <p class="vao"><b>Prática de linguagem ou unidade temática:</b> ${unidadeTematica}</p>
       <p class="vao"><b>Objeto de conhecimento:</b> ${objeto}</p>
       <p class="vao"><b>Código da habilidade:</b> ${habilidade}</p>
