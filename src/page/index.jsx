@@ -215,8 +215,8 @@ const PagesAulas = () => {
           aoValor={(v) => setDesenvolvida(v)}
         />
          <div className="flex justify-between">
-        <Botao valor="Gerar Pagina" onClick={gerarPaginar} />
         <Botao valor="Limpar" onClick={limpar} />
+        <Botao valor="Gerar Pagina" onClick={gerarPaginar} />
          </div>
       </form>
     </>
